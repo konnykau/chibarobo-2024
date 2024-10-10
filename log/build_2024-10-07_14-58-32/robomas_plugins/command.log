@@ -1,4 +1,0 @@
-Invoking command in '/home/mihiro/chibarobo-2024/build/robomas_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mihiro/chibarobo-2024/build/robomas_plugins -- -j16 -l16
-Invoked command in '/home/mihiro/chibarobo-2024/build/robomas_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mihiro/chibarobo-2024/build/robomas_plugins -- -j16 -l16
-Invoking command in '/home/mihiro/chibarobo-2024/build/robomas_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mihiro/chibarobo-2024/build/robomas_plugins
-Invoked command in '/home/mihiro/chibarobo-2024/build/robomas_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mihiro/chibarobo-2024/build/robomas_plugins
