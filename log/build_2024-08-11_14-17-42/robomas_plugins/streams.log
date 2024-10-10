@@ -1,0 +1,315 @@
+[0.035s] Invoking command in '/home/mihiro/chibarobo-2024/build/robomas_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mihiro/chibarobo-2024/src/robomas_plugins -DCMAKE_INSTALL_PREFIX=/home/mihiro/chibarobo-2024/install/robomas_plugins
+[0.169s] -- The C compiler identification is GNU 11.4.0
+[0.421s] -- The CXX compiler identification is GNU 11.4.0
+[0.585s] -- Detecting C compiler ABI info
+[0.684s] -- Detecting C compiler ABI info - done
+[0.688s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.689s] -- Detecting C compile features
+[0.690s] -- Detecting C compile features - done
+[0.694s] -- Detecting CXX compiler ABI info
+[0.795s] -- Detecting CXX compiler ABI info - done
+[0.799s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.800s] -- Detecting CXX compile features
+[0.800s] -- Detecting CXX compile features - done
+[0.806s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.929s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.018s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[1.138s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.144s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.158s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.179s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.201s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.274s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.278s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.023s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.729s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.921s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.934s] -- Looking for pthread.h
+[4.002s] -- Looking for pthread.h - found
+[4.003s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[4.073s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[4.073s] -- Found Threads: TRUE  
+[4.213s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[4.226s] -- Found rclcpp_components: 16.0.6 (/opt/ros/humble/share/rclcpp_components/cmake)
+[4.306s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread 
+[4.503s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[4.756s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.852s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.924s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[4.926s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[5.135s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[5.135s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[5.135s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[5.135s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[5.150s] -- Found PythonExtra: .so  
+[5.200s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.230s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[5.230s] -- Configured cppcheck include dirs: /home/mihiro/chibarobo-2024/src/robomas_plugins/include
+[5.230s] -- Configured cppcheck exclude dirs and/or files: 
+[5.232s] -- Added test 'lint_cmake' to check CMake code style
+[5.236s] -- Added test 'uncrustify' to check C / C++ code style
+[5.236s] -- Configured uncrustify additional arguments: 
+[5.237s] -- Added test 'xmllint' to check XML markup files
+[5.240s] -- Configuring done
+[5.273s] -- Generating done
+[5.276s] -- Build files have been written to: /home/mihiro/chibarobo-2024/build/robomas_plugins
+[5.287s] Invoked command in '/home/mihiro/chibarobo-2024/build/robomas_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mihiro/chibarobo-2024/src/robomas_plugins -DCMAKE_INSTALL_PREFIX=/home/mihiro/chibarobo-2024/install/robomas_plugins
+[5.289s] Invoking command in '/home/mihiro/chibarobo-2024/build/robomas_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mihiro/chibarobo-2024/build/robomas_plugins -- -j16 -l16
+[5.312s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[5.319s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[5.323s] [  4%] Built target ament_cmake_python_copy_robomas_plugins
+[5.504s] running egg_info
+[5.505s] creating robomas_plugins.egg-info
+[5.506s] writing robomas_plugins.egg-info/PKG-INFO
+[5.506s] writing dependency_links to robomas_plugins.egg-info/dependency_links.txt
+[5.506s] writing top-level names to robomas_plugins.egg-info/top_level.txt
+[5.506s] writing manifest file 'robomas_plugins.egg-info/SOURCES.txt'
+[5.510s] reading manifest file 'robomas_plugins.egg-info/SOURCES.txt'
+[5.510s] writing manifest file 'robomas_plugins.egg-info/SOURCES.txt'
+[5.531s] [  4%] Built target ament_cmake_python_build_robomas_plugins_egg
+[5.621s] [  4%] Built target robomas_plugins__cpp
+[5.627s] [  6%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[5.628s] [  8%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[5.631s] [ 10%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[5.648s] [ 12%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_generator_c.dir/rosidl_generator_c/robomas_plugins/msg/detail/frame__functions.c.o[0m
+[5.649s] [ 14%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_generator_c.dir/rosidl_generator_c/robomas_plugins/msg/detail/robomas_target__functions.c.o[0m
+[5.650s] [ 16%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_generator_c.dir/rosidl_generator_c/robomas_plugins/msg/detail/robomas_frame__functions.c.o[0m
+[5.700s] [ 18%] [32m[1mLinking C shared library librobomas_plugins__rosidl_generator_c.so[0m
+[5.790s] [ 18%] Built target robomas_plugins__rosidl_generator_c
+[5.796s] [ 20%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[5.797s] [ 22%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[5.798s] [ 24%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[5.851s] [ 26%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robomas_plugins/msg/robomas_frame__type_support.cpp.o[0m
+[5.852s] [ 28%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robomas_plugins/msg/frame__type_support.cpp.o[0m
+[5.852s] [ 30%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robomas_plugins/msg/robomas_target__type_support.cpp.o[0m
+[5.915s] [ 36%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robomas_plugins/msg/detail/robomas_frame__type_support.cpp.o[0m
+[5.915s] [ 36%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robomas_plugins/msg/detail/robomas_target__type_support.cpp.o[0m
+[5.915s] [ 36%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robomas_plugins/msg/detail/frame__type_support.cpp.o[0m
+[5.947s] [ 38%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robomas_plugins/msg/detail/dds_fastrtps/robomas_frame__type_support.cpp.o[0m
+[5.948s] [ 40%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robomas_plugins/msg/detail/dds_fastrtps/frame__type_support.cpp.o[0m
+[5.948s] [ 42%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robomas_plugins/msg/detail/dds_fastrtps/robomas_target__type_support.cpp.o[0m
+[6.155s] [ 44%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_c.dir/rosidl_typesupport_c/robomas_plugins/msg/robomas_target__type_support.cpp.o[0m
+[6.156s] [ 46%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_c.dir/rosidl_typesupport_c/robomas_plugins/msg/robomas_frame__type_support.cpp.o[0m
+[6.157s] [ 48%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_c.dir/rosidl_typesupport_c/robomas_plugins/msg/frame__type_support.cpp.o[0m
+[6.184s] [ 51%] [32m[1mLinking CXX shared library librobomas_plugins__rosidl_typesupport_cpp.so[0m
+[6.194s] [ 55%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robomas_plugins/msg/detail/robomas_frame__type_support.c.o[0m
+[6.194s] [ 57%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robomas_plugins/msg/detail/frame__type_support.c.o[0m
+[6.196s] [ 57%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robomas_plugins/msg/detail/robomas_target__type_support.c.o[0m
+[6.204s] [ 59%] [32m[1mLinking CXX shared library librobomas_plugins__rosidl_typesupport_c.so[0m
+[6.215s] [ 61%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robomas_plugins/msg/detail/frame__type_support_c.cpp.o[0m
+[6.215s] [ 63%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robomas_plugins/msg/detail/robomas_frame__type_support_c.cpp.o[0m
+[6.217s] [ 65%] [32mBuilding CXX object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robomas_plugins/msg/detail/robomas_target__type_support_c.cpp.o[0m
+[6.236s] [ 67%] [32m[1mLinking C shared library librobomas_plugins__rosidl_typesupport_introspection_c.so[0m
+[6.298s] [ 67%] Built target robomas_plugins__rosidl_typesupport_cpp
+[6.303s] [ 67%] Built target robomas_plugins__rosidl_typesupport_c
+[6.317s] [ 67%] Built target robomas_plugins__rosidl_typesupport_introspection_c
+[6.318s] [ 69%] [32mBuilding CXX object CMakeFiles/robomas_bridge.dir/src/robomas_bridge.cpp.o[0m
+[6.391s] [ 71%] [32m[1mLinking CXX shared library librobomas_plugins__rosidl_typesupport_introspection_cpp.so[0m
+[6.430s] [ 73%] [32m[1mLinking CXX shared library librobomas_plugins__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.505s] [ 73%] Built target robomas_plugins__rosidl_typesupport_introspection_cpp
+[6.540s] [ 73%] Built target robomas_plugins__rosidl_typesupport_fastrtps_cpp
+[6.559s] [ 75%] [32m[1mLinking CXX shared library librobomas_plugins__rosidl_typesupport_fastrtps_c.so[0m
+[6.645s] [ 75%] Built target robomas_plugins__rosidl_typesupport_fastrtps_c
+[6.656s] [ 75%] Built target robomas_plugins
+[6.668s] [ 77%] [34m[1mGenerating Python code for ROS interfaces[0m
+[6.999s] [ 77%] Built target robomas_plugins__py
+[7.010s] [ 79%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_generator_py.dir/rosidl_generator_py/robomas_plugins/msg/_frame_s.c.o[0m
+[7.010s] [ 83%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_generator_py.dir/rosidl_generator_py/robomas_plugins/msg/_robomas_frame_s.c.o[0m
+[7.010s] [ 83%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_generator_py.dir/rosidl_generator_py/robomas_plugins/msg/_robomas_target_s.c.o[0m
+[7.088s] [ 85%] [32m[1mLinking C shared library rosidl_generator_py/robomas_plugins/librobomas_plugins__rosidl_generator_py.so[0m
+[7.154s] [ 85%] Built target robomas_plugins__rosidl_generator_py
+[7.166s] [ 87%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/robomas_plugins/_robomas_plugins_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[7.166s] [ 89%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/robomas_plugins/_robomas_plugins_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[7.167s] [ 91%] [32mBuilding C object CMakeFiles/robomas_plugins__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/robomas_plugins/_robomas_plugins_s.ep.rosidl_typesupport_c.c.o[0m
+[7.237s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/robomas_plugins/robomas_plugins_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.245s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/robomas_plugins/robomas_plugins_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.250s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/robomas_plugins/robomas_plugins_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.307s] [ 97%] Built target robomas_plugins__rosidl_typesupport_c__pyext
+[7.308s] [ 97%] Built target robomas_plugins__rosidl_typesupport_fastrtps_c__pyext
+[7.322s] [ 97%] Built target robomas_plugins__rosidl_typesupport_introspection_c__pyext
+[18.273s] [100%] [32m[1mLinking CXX shared library librobomas_bridge.so[0m
+[19.263s] [100%] Built target robomas_bridge
+[19.273s] Invoked command in '/home/mihiro/chibarobo-2024/build/robomas_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mihiro/chibarobo-2024/build/robomas_plugins -- -j16 -l16
+[19.372s] Invoking command in '/home/mihiro/chibarobo-2024/build/robomas_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mihiro/chibarobo-2024/build/robomas_plugins
+[19.379s] -- Install configuration: ""
+[19.380s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/ament_index/resource_index/rosidl_interfaces/robomas_plugins
+[19.380s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins
+[19.381s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg
+[19.381s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/robomas_target.h
+[19.382s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/rosidl_generator_c__visibility_control.h
+[19.382s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/frame.h
+[19.382s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail
+[19.382s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__struct.h
+[19.382s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__functions.h
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__functions.h
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__type_support.h
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__type_support.h
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__functions.h
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__struct.h
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__functions.c
+[19.383s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__functions.c
+[19.384s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__struct.h
+[19.384s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__functions.c
+[19.384s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__type_support.h
+[19.384s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/robomas_frame.h
+[19.384s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/library_path.sh
+[19.384s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/library_path.dsv
+[19.385s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_generator_c.so
+[19.385s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_generator_c.so" to ""
+[19.385s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins
+[19.386s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg
+[19.386s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[19.387s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail
+[19.387s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__rosidl_typesupport_fastrtps_c.h
+[19.387s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__rosidl_typesupport_fastrtps_c.h
+[19.387s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__rosidl_typesupport_fastrtps_c.h
+[19.387s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_fastrtps_c.so
+[19.387s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_fastrtps_c.so" to ""
+[19.388s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins
+[19.388s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg
+[19.388s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/frame.hpp
+[19.388s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/robomas_frame.hpp
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/robomas_target.hpp
+[19.389s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__builder.hpp
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__struct.hpp
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__traits.hpp
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__traits.hpp
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__traits.hpp
+[19.389s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__builder.hpp
+[19.390s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__builder.hpp
+[19.390s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__struct.hpp
+[19.390s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__struct.hpp
+[19.390s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins
+[19.390s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg
+[19.390s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[19.391s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail
+[19.391s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__rosidl_typesupport_fastrtps_cpp.hpp
+[19.391s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__rosidl_typesupport_fastrtps_cpp.hpp
+[19.391s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__rosidl_typesupport_fastrtps_cpp.hpp
+[19.391s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/dds_fastrtps
+[19.392s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_fastrtps_cpp.so
+[19.392s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_fastrtps_cpp.so" to ""
+[19.392s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins
+[19.392s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg
+[19.392s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[19.392s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail
+[19.393s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__rosidl_typesupport_introspection_c.h
+[19.393s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__type_support.c
+[19.393s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__rosidl_typesupport_introspection_c.h
+[19.393s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__rosidl_typesupport_introspection_c.h
+[19.393s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__type_support.c
+[19.393s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__type_support.c
+[19.394s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_introspection_c.so
+[19.394s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_introspection_c.so" to ""
+[19.394s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_c.so
+[19.394s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_c.so" to ""
+[19.394s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins
+[19.395s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg
+[19.395s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail
+[19.395s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__type_support.cpp
+[19.395s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__type_support.cpp
+[19.395s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/frame__rosidl_typesupport_introspection_cpp.hpp
+[19.395s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__rosidl_typesupport_introspection_cpp.hpp
+[19.395s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_frame__rosidl_typesupport_introspection_cpp.hpp
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_plugins/msg/detail/robomas_target__type_support.cpp
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_introspection_cpp.so
+[19.396s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_introspection_cpp.so" to ""
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_cpp.so
+[19.396s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_typesupport_cpp.so" to ""
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/pythonpath.sh
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/pythonpath.dsv
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins-0.0.1-py3.10.egg-info
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins-0.0.1-py3.10.egg-info/dependency_links.txt
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins-0.0.1-py3.10.egg-info/top_level.txt
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins-0.0.1-py3.10.egg-info/SOURCES.txt
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins-0.0.1-py3.10.egg-info/PKG-INFO
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/_robomas_plugins_s.ep.rosidl_typesupport_fastrtps_c.c
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/_robomas_plugins_s.ep.rosidl_typesupport_introspection_c.c
+[19.396s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/__init__.py
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/_robomas_plugins_s.ep.rosidl_typesupport_c.c
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_robomas_frame_s.c
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_robomas_target_s.c
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_robomas_target.py
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_frame.py
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_robomas_frame.py
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_frame_s.c
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/__init__.py
+[19.397s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/librobomas_plugins__rosidl_generator_py.so
+[19.435s] Listing '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins'...
+[19.435s] Compiling '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/__init__.py'...
+[19.435s] Listing '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg'...
+[19.435s] Compiling '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/__init__.py'...
+[19.435s] Compiling '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_frame.py'...
+[19.435s] Compiling '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_robomas_frame.py'...
+[19.435s] Compiling '/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/msg/_robomas_target.py'...
+[19.440s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[19.441s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[19.441s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[19.441s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[19.442s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[19.442s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/local/lib/python3.10/dist-packages/robomas_plugins/robomas_plugins_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[19.442s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_generator_py.so
+[19.442s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_plugins__rosidl_generator_py.so" to ""
+[19.443s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/msg/Frame.idl
+[19.443s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/msg/RobomasFrame.idl
+[19.443s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/msg/RobomasTarget.idl
+[19.443s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/msg/Frame.msg
+[19.443s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/msg/RobomasFrame.msg
+[19.443s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/msg/RobomasTarget.msg
+[19.443s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include
+[19.444s] -- Up-to-date: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins
+[19.444s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/robomas_bridge.hpp
+[19.444s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/test.hpp
+[19.444s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/cobs.hpp
+[19.444s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/include/robomas_plugins/can_utils.hpp
+[19.444s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_bridge.so
+[19.455s] -- Set runtime path of "/home/mihiro/chibarobo-2024/install/robomas_plugins/lib/librobomas_bridge.so" to ""
+[19.455s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/launch
+[19.455s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/launch/robomas_bridge_launch.xml
+[19.456s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/ament_index/resource_index/package_run_dependencies/robomas_plugins
+[19.456s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/ament_index/resource_index/parent_prefix_path/robomas_plugins
+[19.456s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/ament_prefix_path.sh
+[19.456s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/ament_prefix_path.dsv
+[19.457s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/path.sh
+[19.457s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/environment/path.dsv
+[19.457s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/local_setup.bash
+[19.457s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/local_setup.sh
+[19.457s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/local_setup.zsh
+[19.458s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/local_setup.dsv
+[19.458s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/package.dsv
+[19.459s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/ament_index/resource_index/packages/robomas_plugins
+[19.459s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_generator_cExport.cmake
+[19.459s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_generator_cExport-noconfig.cmake
+[19.460s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_typesupport_fastrtps_cExport.cmake
+[19.460s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[19.461s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_generator_cppExport.cmake
+[19.461s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_typesupport_fastrtps_cppExport.cmake
+[19.461s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[19.461s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_introspection_cExport.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_cExport.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_cExport-noconfig.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_introspection_cppExport.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_cppExport.cmake
+[19.462s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_plugins__rosidl_typesupport_cppExport-noconfig.cmake
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_generator_pyExport.cmake
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/export_robomas_plugins__rosidl_generator_pyExport-noconfig.cmake
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/ament_index/resource_index/rclcpp_components/robomas_plugins
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/rosidl_cmake-extras.cmake
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/ament_cmake_export_dependencies-extras.cmake
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/ament_cmake_export_include_directories-extras.cmake
+[19.463s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/ament_cmake_export_libraries-extras.cmake
+[19.464s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/ament_cmake_export_targets-extras.cmake
+[19.464s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[19.464s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[19.464s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_pluginsConfig.cmake
+[19.464s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/cmake/robomas_pluginsConfig-version.cmake
+[19.465s] -- Installing: /home/mihiro/chibarobo-2024/install/robomas_plugins/share/robomas_plugins/package.xml
+[19.466s] Invoked command in '/home/mihiro/chibarobo-2024/build/robomas_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mihiro/chibarobo-2024/build/robomas_plugins

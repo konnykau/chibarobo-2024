@@ -1,0 +1,4 @@
+source;share/R1_undercarriage/local_setup.bash
+source;share/R1_undercarriage/local_setup.dsv
+source;share/R1_undercarriage/local_setup.sh
+source;share/R1_undercarriage/local_setup.zsh

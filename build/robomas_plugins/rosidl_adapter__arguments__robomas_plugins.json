@@ -1,0 +1,8 @@
+{
+  "package_name": "robomas_plugins",
+  "non_idl_tuples": [
+    "/home/mihiro/chibarobo-2024/src/robomas_plugins:msg/Frame.msg",
+    "/home/mihiro/chibarobo-2024/src/robomas_plugins:msg/RobomasFrame.msg",
+    "/home/mihiro/chibarobo-2024/src/robomas_plugins:msg/RobomasTarget.msg"
+  ]
+}

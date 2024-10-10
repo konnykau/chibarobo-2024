@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from robomas_plugins/msg/RobomasFrame.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module robomas_plugins {
+  module msg {
+    struct RobomasFrame {
+      std_msgs::msg::Header header;
+
+      uint8 motor;
+
+      boolean c620;
+
+      uint8 mode;
+
+      uint8 temp;
+
+      float velkp;
+
+      float velki;
+
+      float poskp;
+
+      float tyoku_vel_target;
+
+      float tyoku_pos_target;
+
+      float stable_pos_limit_vel;
+    };
+  };
+};
