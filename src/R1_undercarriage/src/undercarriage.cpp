@@ -27,7 +27,8 @@ public:
     robomas_pub_right_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target3", 10);
     robomas_launcher_1 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target4", 10);//to do
     robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target5", 10);//to do
-    robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target6", 10);//to do  
+    robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target6", 10);//to do 
+    last_update_time_ = this->now(); 
   }
   
 
@@ -70,10 +71,14 @@ private:
         this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::no_turn);
     }//平行移動//x軸はjoyの入力時点で反転していた
 /////////////////////////////ここの下からは、上で決めたターゲットをシラスに向かって送ってあげる関数
-  robomas_pub_right_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_front_motor)));
-  robomas_pub_right_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_back_motor)));
-  robomas_pub_left_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_front_motor)));
-  robomas_pub_left_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_back_motor)));
+  auto current_time = this->now();
+  double dt = (current_time - last_update_time_).seconds();  // 前回からの経過時間
+  last_update_time_ = current_time;
+
+  robomas_pub_right_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_front_motor,dt)));
+  robomas_pub_right_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_back_motor,dt)));
+  robomas_pub_left_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_front_motor,dt)));
+  robomas_pub_left_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_back_motor,dt)));
 
   //////////////////////////////////////////////////////////////////////
 /*
@@ -105,7 +110,7 @@ private:
   undercarriage NHK_2024_R1;
   launcher LAUNCHER;
   collecter COLLECTER;
-    
+  rclcpp::Time last_update_time_;  // 前回の更新時刻
 };
 
 int main(int argc, char * argv[])

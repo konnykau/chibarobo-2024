@@ -21,20 +21,37 @@ namespace constant{
 
 constexpr float cos45 = 1/FRY::sqrt(2);
 
+constexpr float max_acceleration_ = 0.5;//to do
+constexpr float max_velocity_ = 500.0;//to do
+
 class motor{
     private:
     const FRY::vec2d direction;//モーターの向いている方向ベクトル
-    float TARGET;//TARGET 
+    float TARGET;//TARGET
+    float LAST_TARGET; 
 
     public:
     motor(float x,float y)
-    :direction(FRY::vec2d(x,y)),TARGET(0)
+    :direction(FRY::vec2d(x,y)),TARGET(0),LAST_TARGET(0)
     {}//初期化
     void set_target(float power){
+        this->LAST_TARGET = this->TARGET;
         this->TARGET = power;
     }//TARGETを代入
-    float make_frame()
+    float make_frame(double dt)
     {
+        if(std::fabs(this->TARGET) > max_velocity_){
+            this->TARGET = max_velocity_ * (this->TARGET > 0 ? 1 : -1);
+        }
+        float velocity_difference = this->TARGET - this->LAST_TARGET;
+        float max_velocity_change = max_acceleration_ * dt;
+
+        // 最大加速度の制限を超えないように次の速度を計算
+        if (std::fabs(velocity_difference) < max_velocity_change) {
+            
+        } else {
+            this->TARGET += (velocity_difference > 0 ? 1 : -1) * max_velocity_change;
+        }
         return this->TARGET;
     }
     // std::unique_ptr<can_plugins2::msg::Frame> mode_vel()
@@ -78,24 +95,24 @@ class undercarriage{
     }//初期化
     void set_motor_power(turn_direction turn_dir);//4タイヤがうまく回るようにする
     void set_direction(float x,float y);//行きたい方向
-    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_robomas_Frame(motor_name motor){
+    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_robomas_Frame(motor_name motor,double dt){
         robomas_plugins::msg::RobomasTarget TARGET_FRAME;
         switch (motor)
         {
             case motor_name::left_back_motor:
-            TARGET_FRAME.target = this->left_back_motor.make_frame();
+            TARGET_FRAME.target = this->left_back_motor.make_frame(dt);
             break;
 
             case motor_name::right_back_motor:
-            TARGET_FRAME.target = this->right_back_motor.make_frame();
+            TARGET_FRAME.target = this->right_back_motor.make_frame(dt);
             break;
 
             case motor_name::right_front_motor:
-            TARGET_FRAME.target = this->right_front_motor.make_frame();
+            TARGET_FRAME.target = this->right_front_motor.make_frame(dt);
             break;
 
             case motor_name::left_front_motor:
-            TARGET_FRAME.target = this->left_front_motor.make_frame();
+            TARGET_FRAME.target = this->left_front_motor.make_frame(dt);
             break;
 
             default :
