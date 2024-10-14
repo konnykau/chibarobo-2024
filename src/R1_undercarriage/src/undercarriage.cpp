@@ -61,24 +61,26 @@ private:
     }//mode disにする
 ///////////////////////////////ここの上がstartボタン、backボタンによるmodeの調整
 ///////////////////////////////ここの下から平行移動、回転をするための個々のモーターのターゲットを決めるif文
+
+    auto current_time = this->now();
+    double dt = (current_time - last_update_time_).seconds();  // 前回からの経過時間
+    last_update_time_ = current_time;
     if(msg.axes[2] == -1){//ZL(left shouldderボタン)
-        this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::left_turn);
+        this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::left_turn,dt);
     }//left turn
     else if(msg.axes[5] == -1){//ZR(right shouldderボタン)
-        this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::right_turn);
+        this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::right_turn,dt);
     }//right turn
     else{
-        this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::no_turn);
+        this->NHK_2024_R1.update(-msg.axes[0],msg.axes[1],turn_direction::no_turn,dt);
     }//平行移動//x軸はjoyの入力時点で反転していた
 /////////////////////////////ここの下からは、上で決めたターゲットをシラスに向かって送ってあげる関数
-  auto current_time = this->now();
-  double dt = (current_time - last_update_time_).seconds();  // 前回からの経過時間
-  last_update_time_ = current_time;
 
-  robomas_pub_right_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_front_motor,dt)));
-  robomas_pub_right_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_back_motor,dt)));
-  robomas_pub_left_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_front_motor,dt)));
-  robomas_pub_left_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_back_motor,dt)));
+
+  robomas_pub_right_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_front_motor)));
+  robomas_pub_right_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::right_back_motor)));
+  robomas_pub_left_front_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_front_motor)));
+  robomas_pub_left_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_back_motor)));
 
   //////////////////////////////////////////////////////////////////////
 /*

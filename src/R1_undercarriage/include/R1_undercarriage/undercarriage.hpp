@@ -34,24 +34,24 @@ class motor{
     motor(float x,float y)
     :direction(FRY::vec2d(x,y)),TARGET(0),LAST_TARGET(0)
     {}//初期化
-    void set_target(float power){
-        this->LAST_TARGET = this->TARGET;
-        this->TARGET = power;
-    }//TARGETを代入
-    float make_frame(double dt)
-    {
-        if(std::fabs(this->TARGET) > max_velocity_){
-            this->TARGET = max_velocity_ * (this->TARGET > 0 ? 1 : -1);
+    void set_target(float power,double dt){
+        if(std::fabs(power) > max_velocity_){
+            power = max_velocity_ * (this->TARGET > 0 ? 1 : -1);
         }
-        float velocity_difference = this->TARGET - this->LAST_TARGET;
+        float velocity_difference = power - this->LAST_TARGET;
         float max_velocity_change = max_acceleration_ * dt;
 
         // 最大加速度の制限を超えないように次の速度を計算
         if (std::fabs(velocity_difference) < max_velocity_change) {
             
         } else {
-            this->TARGET += (velocity_difference > 0 ? 1 : -1) * max_velocity_change;
+            this->TARGET = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + LAST_TARGET;
         }
+        this->LAST_TARGET = (this->TARGET);
+        this->TARGET = power;
+    }//TARGETを代入
+    float make_frame()
+    {
         return this->TARGET;
     }
     // std::unique_ptr<can_plugins2::msg::Frame> mode_vel()
@@ -93,26 +93,26 @@ class undercarriage{
     {
         MODE = motor_mode::disable;
     }//初期化
-    void set_motor_power(turn_direction turn_dir);//4タイヤがうまく回るようにする
+    void set_motor_power(turn_direction turn_dir,double dt);//4タイヤがうまく回るようにする
     void set_direction(float x,float y);//行きたい方向
-    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_robomas_Frame(motor_name motor,double dt){
+    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_robomas_Frame(motor_name motor){
         robomas_plugins::msg::RobomasTarget TARGET_FRAME;
         switch (motor)
         {
             case motor_name::left_back_motor:
-            TARGET_FRAME.target = this->left_back_motor.make_frame(dt);
+            TARGET_FRAME.target = this->left_back_motor.make_frame();
             break;
 
             case motor_name::right_back_motor:
-            TARGET_FRAME.target = this->right_back_motor.make_frame(dt);
+            TARGET_FRAME.target = this->right_back_motor.make_frame();
             break;
 
             case motor_name::right_front_motor:
-            TARGET_FRAME.target = this->right_front_motor.make_frame(dt);
+            TARGET_FRAME.target = this->right_front_motor.make_frame();
             break;
 
             case motor_name::left_front_motor:
-            TARGET_FRAME.target = this->left_front_motor.make_frame(dt);
+            TARGET_FRAME.target = this->left_front_motor.make_frame();
             break;
 
             default :
@@ -122,7 +122,7 @@ class undercarriage{
     return std::make_unique<robomas_plugins::msg::RobomasTarget>(TARGET_FRAME);
     }
     void make_mode(motor_mode motor_state);//modeを設定
-    void update(float x,float y,turn_direction turn_dir);//他の関数を全部融合させた
+    void update(float x,float y,turn_direction turn_dir,double dt);//他の関数を全部融合させた
     std::unique_ptr<robomas_plugins::msg::RobomasFrame> make_setting_frame(uint8_t motor_number){
         robomas_plugins::msg::RobomasFrame undercarriage_frame;
         undercarriage_frame.motor = motor_number;
@@ -151,7 +151,7 @@ inline void undercarriage::set_direction(float x,float y){
 
 
 
-inline void undercarriage::set_motor_power(turn_direction turn_dir){
+inline void undercarriage::set_motor_power(turn_direction turn_dir,double dt){
     constexpr float MAX_OF_TARGET = 943.0;
     constexpr float TURN_TARGET = 50.0;
     //多分TARGETの最大値になるはず
@@ -186,10 +186,10 @@ inline void undercarriage::set_motor_power(turn_direction turn_dir){
     RB_TARGET -= direction*this->right_back_motor.get_vec2d()*MAX_OF_TARGET;
 
 
-    right_front_motor.set_target(RF_TARGET);
-    left_front_motor.set_target(LF_TARGET);
-    left_back_motor.set_target(LB_TARGET);
-    right_back_motor.set_target(RB_TARGET);
+    right_front_motor.set_target(RF_TARGET,dt);
+    left_front_motor.set_target(LF_TARGET,dt);
+    left_back_motor.set_target(LB_TARGET,dt);
+    right_back_motor.set_target(RB_TARGET,dt);
     
 
 
@@ -218,10 +218,10 @@ inline void undercarriage::make_mode(motor_mode motor_state){
     this->MODE = motor_state;
 }
 
-inline void undercarriage::update(float x,float y,turn_direction turn_dir)
+inline void undercarriage::update(float x,float y,turn_direction turn_dir,double dt)
 {
     this->set_direction(x,y);
-    this->set_motor_power(turn_dir);
+    this->set_motor_power(turn_dir,dt);
 
 
 }
