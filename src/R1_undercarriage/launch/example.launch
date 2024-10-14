@@ -6,6 +6,9 @@
   <node pkg="R1_undercarriage" exec="undercarriage" name="undercarriage">
   </node>
 
+  <!-- <node pkg="upper" exec="upper" name="upper">
+  </node> -->
+
   
   <include file="$(find-pkg-share robomas_plugins)/launch/robomas_bridge_launch.xml"/>
 

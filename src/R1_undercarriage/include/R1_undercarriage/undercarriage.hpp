@@ -1,3 +1,4 @@
+#pragma once
 #include <math.h>
 #include "R1_undercarriage/fry_lib/vector.hpp"
 #include "R1_undercarriage/fry_lib/math.hpp"
