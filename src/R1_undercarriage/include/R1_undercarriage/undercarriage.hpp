@@ -148,25 +148,25 @@ inline void undercarriage::set_motor_power(turn_direction turn_dir){
         // left_front_motor.set_target(TURN_TARGET);
         // left_back_motor.set_target(TURN_TARGET);
         // right_back_motor.set_target(TURN_TARGET);
-        RF_TARGET = TURN_TARGET;
-        LF_TARGET = TURN_TARGET;
-        LB_TARGET = TURN_TARGET;
-        RB_TARGET = TURN_TARGET;
+        RF_TARGET = -TURN_TARGET;
+        LF_TARGET = -TURN_TARGET;
+        LB_TARGET = -TURN_TARGET;
+        RB_TARGET = -TURN_TARGET;
     }
     else if(turn_dir == turn_direction::right_turn){
         // right_front_motor.set_target(-TURN_TARGET);
         // left_front_motor.set_target(-TURN_TARGET);
         // left_back_motor.set_target(-TURN_TARGET);
         // right_back_motor.set_target(-TURN_TARGET);
-        RF_TARGET = -TURN_TARGET;
-        LF_TARGET = -TURN_TARGET;
-        LB_TARGET = -TURN_TARGET;
-        RB_TARGET = -TURN_TARGET;
+        RF_TARGET = TURN_TARGET;
+        LF_TARGET = TURN_TARGET;
+        LB_TARGET = TURN_TARGET;
+        RB_TARGET = TURN_TARGET;
     }
-    RF_TARGET += direction*this->right_front_motor.get_vec2d()*MAX_OF_TARGET;
-    LF_TARGET += direction*this->left_front_motor.get_vec2d()*MAX_OF_TARGET;
-    LB_TARGET += direction*this->left_back_motor.get_vec2d()*MAX_OF_TARGET;
-    RB_TARGET += direction*this->right_back_motor.get_vec2d()*MAX_OF_TARGET;
+    RF_TARGET -= direction*this->right_front_motor.get_vec2d()*MAX_OF_TARGET;
+    LF_TARGET -= direction*this->left_front_motor.get_vec2d()*MAX_OF_TARGET;
+    LB_TARGET -= direction*this->left_back_motor.get_vec2d()*MAX_OF_TARGET;
+    RB_TARGET -= direction*this->right_back_motor.get_vec2d()*MAX_OF_TARGET;
 
 
     right_front_motor.set_target(RF_TARGET);
