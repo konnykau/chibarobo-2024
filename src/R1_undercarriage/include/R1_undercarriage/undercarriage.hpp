@@ -21,7 +21,7 @@ namespace constant{
 
 constexpr float cos45 = 1/FRY::sqrt(2);
 
-constexpr float max_acceleration_ = 0.5;//to do
+constexpr float max_acceleration_ = 500.0;//to do
 constexpr float max_velocity_ = 500.0;//to do
 
 class motor{

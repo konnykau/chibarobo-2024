@@ -21,10 +21,10 @@ public:
     subscription_ = this->create_subscription<sensor_msgs::msg::Joy>(
       "joy", 10, std::bind(&Undercarriage_Node::topic_callback, this, _1));
     robomas_pub_setting_ = this->create_publisher<robomas_plugins::msg::RobomasFrame>("robomas_frame", 10);
-    robomas_pub_right_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target0", 10);
-    robomas_pub_left_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target1", 10);
-    robomas_pub_left_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2", 10);
-    robomas_pub_right_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target3", 10);
+    robomas_pub_right_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target3", 10);
+    robomas_pub_left_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target0", 10);
+    robomas_pub_left_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target1", 10);
+    robomas_pub_right_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2", 10);
     robomas_launcher_1 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target4", 10);//to do
     robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target5", 10);//to do
     robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target6", 10);//to do 
