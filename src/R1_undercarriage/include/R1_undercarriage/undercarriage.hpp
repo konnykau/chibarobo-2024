@@ -28,7 +28,7 @@ class motor{
     private:
     const FRY::vec2d direction;//モーターの向いている方向ベクトル
     float TARGET;//TARGET
-    float LAST_TARGET; 
+    // float LAST_TARGET; 
 
     public:
     motor(float x,float y)
@@ -36,18 +36,18 @@ class motor{
     {}//初期化
     void set_target(float power,double dt){
         if(std::fabs(power) > max_velocity_){
-            power = max_velocity_ * (this->TARGET > 0 ? 1 : -1);
+            power = max_velocity_ * (power > 0 ? 1 : -1);
         }
-        float velocity_difference = power - this->LAST_TARGET;
+        float velocity_difference = power - this->TARGET;
         float max_velocity_change = max_acceleration_ * dt;
 
         // 最大加速度の制限を超えないように次の速度を計算
         if (std::fabs(velocity_difference) < max_velocity_change) {
             
         } else {
-            this->TARGET = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + LAST_TARGET;
+            power = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + this->TARGET;
         }
-        this->LAST_TARGET = (this->TARGET);
+        // this->LAST_TARGET = (this->TARGET);
         this->TARGET = power;
     }//TARGETを代入
     float make_frame()
