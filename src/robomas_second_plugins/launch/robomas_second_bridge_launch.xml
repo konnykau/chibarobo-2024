@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="rclcpp_components" exec="component_container" name="robomas_second_bridge">
+    
+    </node>
+    <load_composable_node target="robomas_second_bridge">
+        <composable_node pkg="robomas_second_plugins" plugin="robomas_bridge::RobomasSecondBridge" name="robomas_second_bridge">
+        </composable_node>
+    </load_composable_node>
+</launch>
