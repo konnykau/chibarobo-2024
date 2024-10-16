@@ -25,9 +25,11 @@ public:
     robomas_pub_left_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target0", 10);
     robomas_pub_left_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target1", 10);
     robomas_pub_right_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2", 10);
-    robomas_launcher_1 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target4", 10);//to do
-    robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target5", 10);//to do
-    robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target6", 10);//to do 
+
+    robomas_pub_setting_2_ = this->create_publisher<robomas_plugins::msg::RobomasFrame>("robomas_frame2", 10);
+    robomas_launcher_1 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_0", 10);//to do
+    robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_1", 10);//to do
+    robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_2", 10);//to do 
     last_update_time_ = this->now(); 
   }
   
@@ -43,9 +45,9 @@ private:
       robomas_pub_setting_->publish(std::move(this->NHK_2024_R1.make_setting_frame(1)));
       robomas_pub_setting_->publish(std::move(this->NHK_2024_R1.make_setting_frame(2)));
       robomas_pub_setting_->publish(std::move(this->NHK_2024_R1.make_setting_frame(3)));
-      robomas_pub_setting_->publish(std::move(this->LAUNCHER.make_setting_frame(4)));//todo
-      robomas_pub_setting_->publish(std::move(this->LAUNCHER.make_setting_frame(5)));//todo
-      robomas_pub_setting_->publish(std::move(this->COLLECTER.make_setting_frame(6))); //to do
+      robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(0)));//todo
+      robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(1)));//todo
+      robomas_pub_setting_2_->publish(std::move(this->COLLECTER.make_setting_frame(2))); //to do
     }//mode velにする
     if(msg.buttons[6]){//backボタン
       NHK_2024_R1.make_mode(motor_mode::disable);
@@ -55,9 +57,9 @@ private:
       robomas_pub_setting_->publish(std::move(this->NHK_2024_R1.make_setting_frame(1)));
       robomas_pub_setting_->publish(std::move(this->NHK_2024_R1.make_setting_frame(2)));
       robomas_pub_setting_->publish(std::move(this->NHK_2024_R1.make_setting_frame(3)));
-      robomas_pub_setting_->publish(std::move(this->LAUNCHER.make_setting_frame(4)));//todo
-      robomas_pub_setting_->publish(std::move(this->LAUNCHER.make_setting_frame(5)));//todo
-      robomas_pub_setting_->publish(std::move(this->COLLECTER.make_setting_frame(6))); //todo
+      robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(0)));//todo
+      robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(1)));//todo
+      robomas_pub_setting_2_->publish(std::move(this->COLLECTER.make_setting_frame(2))); //todo
     }//mode disにする
 ///////////////////////////////ここの上がstartボタン、backボタンによるmodeの調整
 ///////////////////////////////ここの下から平行移動、回転をするための個々のモーターのターゲットを決めるif文
@@ -83,8 +85,8 @@ private:
   robomas_pub_left_back_->publish(std::move(this->NHK_2024_R1.make_robomas_Frame(motor_name::left_back_motor)));
 
   //////////////////////////////////////////////////////////////////////
-/*
-    if(msg.button[]){//todo
+
+    if(msg.buttons[2]){//todo
         robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame()));
         robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame()));
     }
@@ -92,13 +94,13 @@ private:
         robomas_launcher_1->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));
         robomas_launcher_2->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));        
     }
-    if(msg.button[]){//todo
+    if(msg.button2[4]){//todo
         robomas_collecter->publish(std::move(this->LAUNCHER.make_collecter_Frame()));
     }
     else{
         robomas_collecter->publish(std::move(this->LAUNCHER.stop_collecter_Frame()));
     }
-*/
+
 }
   rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr subscription_;
   rclcpp::Publisher<robomas_plugins::msg::RobomasFrame>::SharedPtr robomas_pub_setting_;
@@ -106,6 +108,7 @@ private:
   rclcpp::Publisher<robomas_plugins::msg::RobomasTarget>::SharedPtr robomas_pub_left_front_;
   rclcpp::Publisher<robomas_plugins::msg::RobomasTarget>::SharedPtr robomas_pub_left_back_;
   rclcpp::Publisher<robomas_plugins::msg::RobomasTarget>::SharedPtr robomas_pub_right_back_;
+  rclcpp::Publisher<robomas_plugins::msg::RobomasFrame>::SharedPtr robomas_pub_setting_2_;
   rclcpp::Publisher<robomas_plugins::msg::RobomasTarget>::SharedPtr robomas_launcher_1;
   rclcpp::Publisher<robomas_plugins::msg::RobomasTarget>::SharedPtr robomas_launcher_2;
   rclcpp::Publisher<robomas_plugins::msg::RobomasTarget>::SharedPtr robomas_collecter;

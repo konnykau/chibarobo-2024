@@ -32,7 +32,7 @@ class motor{
 
     public:
     motor(float x,float y)
-    :direction(FRY::vec2d(x,y)),TARGET(0),LAST_TARGET(0)
+    :direction(FRY::vec2d(x,y)),TARGET(0)
     {}//初期化
     void set_target(float power,double dt){
         if(std::fabs(power) > max_velocity_){
