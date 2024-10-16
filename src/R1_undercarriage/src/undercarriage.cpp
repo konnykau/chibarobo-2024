@@ -87,8 +87,8 @@ private:
   //////////////////////////////////////////////////////////////////////
 
     if(msg.buttons[2]){//todo
-        robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame()));
-        robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame()));
+        robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame(-5000)));
+        robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame(5000)));
     }
     else{
         robomas_launcher_1->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));

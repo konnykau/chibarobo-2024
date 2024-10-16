@@ -19,9 +19,9 @@ class launcher{
         this->MODE = motor_state;
     }
 
-    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_launcher_Frame(){
+    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_launcher_Frame(float TARGET){
         robomas_plugins::msg::RobomasTarget TARGET_FRAME;
-        TARGET_FRAME.target = this->LAUNCHER_TARGET;
+        TARGET_FRAME.target = TARGET;
         return std::make_unique<robomas_plugins::msg::RobomasTarget>(TARGET_FRAME);
     }
     std::unique_ptr<robomas_plugins::msg::RobomasTarget> stop_launcher_Frame(){
