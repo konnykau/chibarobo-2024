@@ -94,11 +94,11 @@ private:
         robomas_launcher_1->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));
         robomas_launcher_2->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));        
     }
-    if(msg.button2[4]){//todo
-        robomas_collecter->publish(std::move(this->LAUNCHER.make_collecter_Frame()));
+    if(msg.buttons[4]){//todo
+        robomas_collecter->publish(std::move(this->COLLECTER.make_collecter_Frame()));
     }
     else{
-        robomas_collecter->publish(std::move(this->LAUNCHER.stop_collecter_Frame()));
+        robomas_collecter->publish(std::move(this->COLLECTER.stop_collecter_Frame()));
     }
 
 }
