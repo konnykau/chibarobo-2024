@@ -1,6 +1,7 @@
 #pragma once
 #include "robomas_plugins/msg/robomas_frame.hpp"
 #include "robomas_plugins/msg/robomas_target.hpp"
+#include "robomas_plugins/can_utils.hpp"
 #include "undercarriage.hpp"
 
 
