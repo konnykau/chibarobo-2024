@@ -1,7 +1,7 @@
 #pragma once
 #include "robomas_plugins/msg/robomas_frame.hpp"
 #include "robomas_plugins/msg/robomas_target.hpp"
-#include "robomas_plugins/can_utils.hpp"
+#include <can_utils.hpp>
 #include "undercarriage.hpp"
 
 
@@ -99,15 +99,15 @@ class servo{
 
 
     public:
-     std::unique_ptr<can_plugins2::msg::Frame> mode_on()
+     std::unique_ptr<robomas_plugins::msg::Frame> mode_on()
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x1));
     }
-     std::unique_ptr<can_plugins2::msg::Frame> mode_off()
+     std::unique_ptr<robomas_plugins::msg::Frame> mode_off()
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x0));
     }
-     std::unique_ptr<robomas_plugins2::msg::Frame> send_servo_state(uint8_t number,uint16_t CCR);
+     std::unique_ptr<robomas_plugins::msg::Frame> send_servo_state(uint8_t number,uint16_t CCR)
     {
         uint64_t returner = 0;
 

@@ -1,5 +1,5 @@
 #include <array>
-#include <robomas_plugins2/msg/frame.hpp>
+#include <robomas_plugins/msg/frame.hpp>
 
 namespace can_utils
 {
