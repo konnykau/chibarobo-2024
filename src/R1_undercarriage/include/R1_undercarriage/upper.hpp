@@ -107,7 +107,7 @@ class servo{
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x0));
     }
-     std::unique_ptr<can_plugins2::msg::Frame> send_servo_state(uint8_t number,uint16_t CCR);
+     std::unique_ptr<robomas_plugins2::msg::Frame> send_servo_state(uint8_t number,uint16_t CCR);
     {
         uint64_t returner = 0;
 
