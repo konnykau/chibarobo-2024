@@ -19,9 +19,9 @@ namespace can_utils
   }
 
   template <typename T>
-  inline std::unique_ptr<can_plugins2::msg::Frame> generate_frame(const uint16_t id, const T data)
+  inline std::unique_ptr<robomas_plugins::msg::Frame> generate_frame(const uint16_t id, const T data)
   {
-    std::unique_ptr<can_plugins2::msg::Frame> frame;
+    std::unique_ptr<robomas_plugins::msg::Frame> frame;
     frame->id = id;
     frame->is_rtr = false;
     frame->is_extended = false;

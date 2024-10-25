@@ -99,15 +99,15 @@ class servo{
 
 
     public:
-     std::unique_ptr<can_plugins2::msg::Frame> mode_on()
+     std::unique_ptr<robomas_plugins::msg::Frame> mode_on()
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x1));
     }
-     std::unique_ptr<can_plugins2::msg::Frame> mode_off()
+     std::unique_ptr<robomas_plugins::msg::Frame> mode_off()
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x0));
     }
-     std::unique_ptr<can_plugins2::msg::Frame> send_servo_state(uint8_t number)
+     std::unique_ptr<robomas_plugins::msg::Frame> send_servo_state(uint8_t number)
     {
         // uint64_t returner = 0;
 
