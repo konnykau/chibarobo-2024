@@ -99,22 +99,22 @@ class servo{
 
 
     public:
-     std::unique_ptr<robomas_plugins::msg::Frame> mode_on()
+     std::unique_ptr<can_plugins2::msg::Frame> mode_on()
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x1));
     }
-     std::unique_ptr<robomas_plugins::msg::Frame> mode_off()
+     std::unique_ptr<can_plugins2::msg::Frame> mode_off()
     {
         return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x0));
     }
-     std::unique_ptr<robomas_plugins::msg::Frame> send_servo_state(uint8_t number,uint16_t CCR)
+     std::unique_ptr<can_plugins2::msg::Frame> send_servo_state(uint8_t number)
     {
-        uint64_t returner = 0;
+        // uint64_t returner = 0;
 
-        returner = CCR;
-        for(int i = 0;i < number;i++){
-            returner = returner * 65536;
-        }
+        // returner = CCR;
+        // for(int i = 0;i < number;i++){
+        //     returner = returner * 65536;
+        // }
         // for(int i = 3;i >= 0;i--){
         //     returner = 65536*returner;
         //     if(number == i){
@@ -122,7 +122,7 @@ class servo{
         //     }
         //     returner = returner + CCRs[i];
         // }
-        return can_utils::generate_frame(CAN_ID + 1,returner);
+        return can_utils::generate_frame(CAN_ID + 1,number);
 
         
     }

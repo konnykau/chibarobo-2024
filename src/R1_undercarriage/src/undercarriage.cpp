@@ -31,7 +31,7 @@ public:
     robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_1", 10);//to do
     robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_2", 10);//to do 
     last_update_time_ = this->now(); 
-    can_sending = this->create_publisher<robomas_plugins::msg::Frame>("robomas_can_tx", 10);
+    can_sending = this->create_publisher<robomas_plugins::msg::Frame>("can_tx", 10);
   }
   
 
@@ -49,7 +49,7 @@ private:
       robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(0)));//todo
       robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(1)));//todo
       robomas_pub_setting_2_->publish(std::move(this->COLLECTER.make_setting_frame(2))); //to do
-      can_sending ->->publish(std::move(this->SERVO.mode_on()));
+      can_sending ->publish(std::move(this->SERVO.mode_on()));
     }//mode velにする
     if(msg.buttons[6]){//backボタン
       NHK_2024_R1.make_mode(motor_mode::disable);
@@ -62,7 +62,7 @@ private:
       robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(0)));//todo
       robomas_pub_setting_2_->publish(std::move(this->LAUNCHER.make_setting_frame(1)));//todo
       robomas_pub_setting_2_->publish(std::move(this->COLLECTER.make_setting_frame(2))); //todo
-      can_sending ->->publish(std::move(this->SERVO.mode_off()));
+      can_sending  ->publish(std::move(this->SERVO.mode_off()));
     }//mode disにする
 ///////////////////////////////ここの上がstartボタン、backボタンによるmodeの調整
 ///////////////////////////////ここの下から平行移動、回転をするための個々のモーターのターゲットを決めるif文
@@ -104,10 +104,10 @@ private:
         robomas_collecter->publish(std::move(this->COLLECTER.stop_collecter_Frame()));
     }
     if(msg.buttons[3]){
-      can_sending->publish(std::move(this->SERVO.send_servo_state(0,40000)));
+      can_sending->publish(std::move(this->SERVO.send_servo_state(1)));
     }
     else{
-      can_sending->publish(std::move(this->SERVO.send_servo_state(0,20000)));
+      can_sending->publish(std::move(this->SERVO.send_servo_state(0)));
     }
 
 }

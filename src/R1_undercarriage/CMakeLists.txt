@@ -15,6 +15,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(robomas_plugins REQUIRED)
+find_package(can_plugins2 REQUIRED)
 
 
 include_directories(
@@ -23,7 +24,7 @@ include_directories(
 )
 
 add_executable(undercarriage src/undercarriage.cpp)
-ament_target_dependencies(undercarriage rclcpp sensor_msgs robomas_plugins)
+ament_target_dependencies(undercarriage rclcpp sensor_msgs robomas_plugins can_plugins2)
 
 ament_export_include_directories(include)
 
