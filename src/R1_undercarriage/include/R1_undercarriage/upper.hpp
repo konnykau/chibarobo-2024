@@ -1,7 +1,8 @@
 #pragma once
 #include "robomas_plugins/msg/robomas_frame.hpp"
 #include "robomas_plugins/msg/robomas_target.hpp"
-#include <can_utils.hpp>
+#include "robomas_plugins/msg/frame.hpp"
+#include "can_utils.hpp"
 #include "undercarriage.hpp"
 
 
@@ -93,21 +94,36 @@ class collecter{
     }
 };
 
+
+
+
 class servo{
     private:
     const int CAN_ID = 0x300;
 
 
     public:
+     std::unique_ptr<robomas_plugins::msg::Frame> generate_frame(uint32_t id, uint16_t data[]){
+  auto frame = std::make_unique<robomas_plugins::msg::Frame>();
+  frame->id = id;
+  frame->is_rtr = false;
+  frame->is_extended = false;
+  frame->is_error = false;
+  frame->dlc = 8;
+  std::memcpy(frame->data.data(),data,8);
+  return frame;
+}
      std::unique_ptr<robomas_plugins::msg::Frame> mode_on()
     {
-        return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x1));
+        uint16_t data = 0x1;
+        return this->generate_frame(this->CAN_ID,&data);
     }
      std::unique_ptr<robomas_plugins::msg::Frame> mode_off()
     {
-        return can_utils::generate_frame(this->CAN_ID,static_cast<uint8_t>(0x0));
+        uint16_t data = 0x0;
+        return this->generate_frame(this->CAN_ID,&data);
     }
-     std::unique_ptr<robomas_plugins::msg::Frame> send_servo_state(uint8_t number)
+     std::unique_ptr<robomas_plugins::msg::Frame> send_servo_state(uint16_t number)
     {
         // uint64_t returner = 0;
 
@@ -122,7 +138,8 @@ class servo{
         //     }
         //     returner = returner + CCRs[i];
         // }
-        return can_utils::generate_frame(CAN_ID + 1,number);
+        uint16_t data = number;
+        return this->generate_frame(this->CAN_ID,&data);
 
         
     }

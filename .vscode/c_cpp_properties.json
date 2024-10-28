@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}",
                 "/opt/ros/humble/include/**",
                 "${workspaceFolder}/src/R1_undercarriage/",
                 "${workspaceFolder}/install/robomas_plugins/include/**",

@@ -8,10 +8,12 @@
   <license>Apache-2.0</license>
 
   <depend>robomas_plugins</depend>
+  <depend>can_plugins2</depend>
 
   <test_depend>rclcpp</test_depend>
   <test_depend>sensor_msgs</test_depend>
   <test_depend>robomas_plugins</test_depend>
+  <test_depend>can_plugins2</test_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

@@ -7,6 +7,7 @@
 #include "R1_undercarriage/upper.hpp"
 #include "robomas_plugins/msg/robomas_frame.hpp"
 #include "robomas_plugins/msg/robomas_target.hpp"
+#include "robomas_plugins/msg/frame.hpp"
 // #include "robomas_target__struct.hpp"
 
 using std::placeholders::_1;
