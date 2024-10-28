@@ -139,7 +139,7 @@ class servo{
         //     returner = returner + CCRs[i];
         // }
         uint16_t data = number;
-        return this->generate_frame(this->CAN_ID,&data);
+        return this->generate_frame(this->CAN_ID+1,&data);
 
         
     }

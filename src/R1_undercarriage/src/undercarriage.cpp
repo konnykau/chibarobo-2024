@@ -32,7 +32,7 @@ public:
     robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_1", 10);//to do
     robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_2", 10);//to do 
     last_update_time_ = this->now(); 
-    can_sending = this->create_publisher<robomas_plugins::msg::Frame>("can_tx", 10);
+    can_sending = this->create_publisher<robomas_plugins::msg::Frame>("robomas_can_tx2", 10);
   }
   
 
