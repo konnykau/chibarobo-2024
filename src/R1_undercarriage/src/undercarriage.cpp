@@ -91,13 +91,16 @@ private:
   //////////////////////////////////////////////////////////////////////
 
     if(msg.buttons[2]){//todo
-        robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame(942)));
-        robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame(-942)));
+     this->LAUNCHER.set_TARGET(942,dt);
+     this->LAUNCHER.set_TARGET(-942,dt);
+
     }
     else{
-        robomas_launcher_1->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));
-        robomas_launcher_2->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));        
+        this->LAUNCHER.set_TARGET(0,dt);
+        this->LAUNCHER.set_TARGET(0,dt);       
     }
+        robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame()));
+        robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame()));
     if(msg.buttons[1]){//todo
         robomas_collecter->publish(std::move(this->COLLECTER.make_collecter_Frame()));
     }

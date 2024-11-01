@@ -12,7 +12,8 @@
 class launcher{
     private:
 
-    const float LAUNCHER_TARGET = 100.0;
+    float LAUNCHER_TARGET = 0;
+    const float L_max_acceleration = 200;
     motor_mode MODE = motor_mode::disable;
 
     public:
@@ -20,17 +21,30 @@ class launcher{
     void make_mode(motor_mode motor_state){
         this->MODE = motor_state;
     }
+    void set_TARGET(float power,double dt){
 
-    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_launcher_Frame(float TARGET){
+        float velocity_difference = power - this->LAUNCHER_TARGET;
+        float max_velocity_change = L_max_acceleration_ * dt;
+
+        // 最大加速度の制限を超えないように次の速度を計算
+        if (std::fabs(velocity_difference) < max_velocity_change) {
+            
+        } else {
+            power = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + this->TARGET;
+        }
+        // this->LAST_TARGET = (this->TARGET);
+        this->LAUNCHER_TARGET = power;
+    }
+    std::unique_ptr<robomas_plugins::msg::RobomasTarget> make_launcher_Frame(){
         robomas_plugins::msg::RobomasTarget TARGET_FRAME;
-        TARGET_FRAME.target = TARGET;
+        TARGET_FRAME.target = LAUNCHER_TARGET;
         return std::make_unique<robomas_plugins::msg::RobomasTarget>(TARGET_FRAME);
     }
-    std::unique_ptr<robomas_plugins::msg::RobomasTarget> stop_launcher_Frame(){
-        robomas_plugins::msg::RobomasTarget TARGET_FRAME;
-        TARGET_FRAME.target = 0;
-        return std::make_unique<robomas_plugins::msg::RobomasTarget>(TARGET_FRAME);
-    }
+    // std::unique_ptr<robomas_plugins::msg::RobomasTarget> stop_launcher_Frame(){
+    //     robomas_plugins::msg::RobomasTarget TARGET_FRAME;
+    //     TARGET_FRAME.target = 0;
+    //     return std::make_unique<robomas_plugins::msg::RobomasTarget>(TARGET_FRAME);
+    // }
     
     std::unique_ptr<robomas_plugins::msg::RobomasFrame> make_setting_frame(uint8_t motor_number){
         robomas_plugins::msg::RobomasFrame undercarriage_frame;
