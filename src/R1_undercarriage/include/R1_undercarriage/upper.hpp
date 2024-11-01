@@ -55,7 +55,7 @@ class launcher{
 
 class collecter{
     private :
-    const float TARGET = 20.0;
+    const float TARGET = -200.0;
     motor_mode MODE = motor_mode::disable;
 
     public :

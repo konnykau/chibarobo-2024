@@ -22,7 +22,7 @@ namespace constant{
 constexpr float cos45 = 1/FRY::sqrt(2);
 
 constexpr float max_acceleration_ = 500.0;//to do
-constexpr float max_velocity_ = 500.0;//to do
+constexpr float max_velocity_ = 900.0;//to do
 
 class motor{
     private:
@@ -152,8 +152,8 @@ inline void undercarriage::set_direction(float x,float y){
 
 
 inline void undercarriage::set_motor_power(turn_direction turn_dir,double dt){
-    constexpr float MAX_OF_TARGET = 300.0;
-    constexpr float TURN_TARGET = 50.0;
+    constexpr float MAX_OF_TARGET = 600.0;
+    constexpr float TURN_TARGET = 75.0;
     //多分TARGETの最大値になるはず
     float RF_TARGET = 0;
     float LF_TARGET = 0;

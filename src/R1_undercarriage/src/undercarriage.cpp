@@ -22,17 +22,17 @@ public:
     subscription_ = this->create_subscription<sensor_msgs::msg::Joy>(
       "joy", 10, std::bind(&Undercarriage_Node::topic_callback, this, _1));
     robomas_pub_setting_ = this->create_publisher<robomas_plugins::msg::RobomasFrame>("robomas_frame", 10);
-    robomas_pub_right_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target3", 10);
-    robomas_pub_left_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target0", 10);
-    robomas_pub_left_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target1", 10);
-    robomas_pub_right_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2", 10);
+    robomas_pub_right_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target1", 10);
+    robomas_pub_left_front_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2", 10);
+    robomas_pub_left_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target3", 10);
+    robomas_pub_right_back_ = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target0", 10);
 
     robomas_pub_setting_2_ = this->create_publisher<robomas_plugins::msg::RobomasFrame>("robomas_frame2", 10);
     robomas_launcher_1 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_0", 10);//to do
     robomas_launcher_2 = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_1", 10);//to do
     robomas_collecter = this->create_publisher<robomas_plugins::msg::RobomasTarget>("robomas_target2_2", 10);//to do 
     last_update_time_ = this->now(); 
-    can_sending = this->create_publisher<robomas_plugins::msg::Frame>("robomas_can_tx2", 10);
+    can_sending = this->create_publisher<robomas_plugins::msg::Frame>("robomas_can_tx", 10);
   }
   
 
@@ -91,14 +91,14 @@ private:
   //////////////////////////////////////////////////////////////////////
 
     if(msg.buttons[2]){//todo
-        robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame(800)));
-        robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame(-800)));
+        robomas_launcher_1->publish(std::move(this->LAUNCHER.make_launcher_Frame(942)));
+        robomas_launcher_2->publish(std::move(this->LAUNCHER.make_launcher_Frame(-942)));
     }
     else{
         robomas_launcher_1->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));
         robomas_launcher_2->publish(std::move(this->LAUNCHER.stop_launcher_Frame()));        
     }
-    if(msg.buttons[4]){//todo
+    if(msg.buttons[1]){//todo
         robomas_collecter->publish(std::move(this->COLLECTER.make_collecter_Frame()));
     }
     else{
