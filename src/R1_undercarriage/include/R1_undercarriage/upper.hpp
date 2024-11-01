@@ -9,7 +9,7 @@
 
 enum class launcher_RL{
     Right,Left
-}
+};
 
 class launcher{
     private:
@@ -25,20 +25,31 @@ class launcher{
         this->MODE = motor_state;
     }
     void acceralation_control(float power,double dt,launcher_RL RL){
-        float velocity_difference = power - this->LAUNCHER_TARGET;
-        float max_velocity_change = L_max_acceleration_ * dt;
+        
+        if(RL = launcher_RL::Left){
+            float velocity_difference = power - this->Left_LAUNCHER_TARGET;
+        float max_velocity_change = L_max_acceleration * dt;
 
         // 最大加速度の制限を超えないように次の速度を計算
         if (std::fabs(velocity_difference) < max_velocity_change) {
             
         } else {
-            power = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + this->TARGET;
+            power = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + this->Left_LAUNCHER_TARGET;
         }
-        if(RL = launcher_RL::Left){
             this->Left_LAUNCHER_TARGET = power;
         }
         if(RL = launcher_RL::Right){
+                float velocity_difference = power - this->Left_LAUNCHER_TARGET;
+        float max_velocity_change = L_max_acceleration * dt;
+
+        // 最大加速度の制限を超えないように次の速度を計算
+        if (std::fabs(velocity_difference) < max_velocity_change) {
+            
+        } else {
+            power = (velocity_difference > 0 ? 1 : -1) * max_velocity_change + this->Right_LAUNCHER_TARGET;
+        }
             this->Right_LAUNCHER_TARGET = power;
+        }
         }        
     }
     void set_TARGET(float R_power,float L_power,double dt){
